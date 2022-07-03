@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>scroll sidebar animasyonu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <style>
+    body{
+        text-transform: uppercase;
+        font-weight:100;
+        line-height: 25px;
+        margin: 0 ;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+       
+        
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    a{
+        text-decoration: none;
+        display: block;
+        margin-bottom: 30px;
+        color: azure;
+        transition: 300ms all;
+    }
+    a:hover {
+       
+        transform: translatex(10px);
+    }
+    
+    ul{
+      
+        list-style-type:none;
+        margin-top: 0;
+       
+       background-color: darkcyan;
+       width: 300px;
+       height: 100vh;
+       display: flex;
+       justify-content: center;
+     
+       flex-direction: column;
+       transition: 300ms all;
+       position: fixed;
+       left:-400px;
+       top: 0;     
+       
+      
+        
+    }
+    input[type="checkbox"]:checked ~ ul{
+        left: 0;
+    }
+    li{
+       display: block;
+    }
+   input[type="checkbox"]{
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    cursor: pointer;
+    left: 100px;
+    top: 100px;
+    opacity: 0;
+    z-index: 10000;
+   }
+   .icon{
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    cursor: pointer;
+    left: 105px;
+    top: 100px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 10001;
+    pointer-events: none;
+
+   }
+   .icon::before{
+    display: block;
+    content: "menu";
+    color: white;
+    line-height: 80px;
+    text-align: center;
+   }
+   input[type="checkbox"]:checked ~ .icon::before{
+    content: "close";
+   }
+   section#home{
+    background-color: darkorchid;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    line-height: 100vh;
+
+   }
+   section#developer{
+    background-color: darkorange;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    line-height: 100vh;
+
+   }
+   section#graph{
+    background-color: chartreuse;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    line-height: 100vh;
+
+   }
+   section#contact{
+    background-color: maroon;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    line-height: 100vh;
+
+   }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox">
+        <span class="icon"></span>
+        <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#developer">developer</a></li>
+            <li><a href="#graph">graph</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </div>
+    <section id="home">home</section>
+    <section id="developer">developer</section>
+    <section id="graph">graph</section>
+    <section id="contact">contact</section>
+    
+</body>
+</html>
